@@ -1,0 +1,37 @@
+{
+  "sources": {
+    "lempit": {
+      "path": "."
+    },
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    },
+    "nginx": {
+      "locked_version": "1.7.0"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "apt": {
+      "locked_version": "2.0.0"
+    },
+    "runit": {
+      "locked_version": "1.1.6"
+    },
+    "ohai": {
+      "locked_version": "1.1.10"
+    },
+    "php": {
+      "locked_version": "1.2.2"
+    },
+    "xml": {
+      "locked_version": "1.1.2"
+    }
+  }
+}

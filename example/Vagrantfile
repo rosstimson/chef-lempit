@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'Ubuntu 12.04'
+  config.vm.box_url = 'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box'
+
+  # Speed things up by using caching (vagrant-cachier plugin).
+  config.cache.auto_detect = true
+
+  # Forward 8080 on the development machine to Nginx on the virtual machine.
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+
+  # Install self contained Chef for provisioning (vagrant-omnibus plugin).
+  config.omnibus.chef_version = :latest
+
+  # Use Berkshelf to fetch our cookbooks (vagrant-berkshelf plugin).
+  config.berkshelf.enabled = true
+
+  # Enable provisioning with Chef-Solo.
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe 'lempit'
+  end
+end
